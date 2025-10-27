@@ -33,9 +33,15 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^20.0.0
         version: 20.0.0
+      '@emotion/cache':
+        specifier: ^11.14.0
+        version: 11.14.0
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.2.2)(react@19.1.0)
+      '@emotion/sheet':
+        specifier: ^1.4.0
+        version: 1.4.0
       '@emotion/styled':
         specifier: ^11.14.1
         version: 11.14.1(@emotion/react@11.14.0(@types/react@19.2.2)(react@19.1.0))(@types/react@19.2.2)(react@19.1.0)
