@@ -1,0 +1,8 @@
+echo "🔍 commit 이전에 lint 규칙을 적용합니다..."
+pnpm exec lint-staged && {
+  echo "👍 Lint Success."
+  exit 0
+}
+
+echo "❌ Lint Fail."
+exit 1
