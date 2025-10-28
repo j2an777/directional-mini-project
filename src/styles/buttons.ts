@@ -12,8 +12,15 @@ export const buttonTypeMap = {
   `,
   pinkWhite: css`
     box-shadow: none;
-    border: none;
+    border: 1px solid transparent;
     background-color: ${colors.pink};
+    outline: none;
+    color: ${colors.white};
+  `,
+  disable: css`
+    box-shadow: none;
+    border: 1px solid transparent;
+    background-color: ${colors.gray10};
     outline: none;
     color: ${colors.white};
   `,
@@ -26,6 +33,12 @@ export const buttonSizeMap = {
     box-sizing: border-box;
     border-radius: 10px;
     font-size: 20px;
+  `,
+  buttonM: css`
+    padding: 10px 18px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
   `,
   buttonModalDefault: css`
     width: 100%;

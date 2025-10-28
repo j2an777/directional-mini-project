@@ -30,6 +30,12 @@ export const layoutMap = {
     align-items: center;
     justify-content: flex-end;
   `,
+  flexStartRow: css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  `,
   absoluteCenter: css`
     position: absolute;
     top: 50%;
