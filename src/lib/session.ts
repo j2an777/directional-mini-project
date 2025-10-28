@@ -1,13 +1,13 @@
 import { getIronSession, SessionOptions } from 'iron-session';
 import { cookies } from 'next/headers';
 
-import { SessionContent } from '@/types/user';
+import { UserContent } from '@/types/user';
 
 const SESSION_COOKIE_NAME = 'HWV-token';
 
-export default async function getSession() {
+export default async function getSession(): Promise<UserContent | any> {
   const cookieData = await cookies();
-  const session = await getIronSession<SessionContent | any>(cookieData, sessionOptions);
+  const session = await getIronSession<UserContent | any>(cookieData, sessionOptions);
 
   return session;
 }
