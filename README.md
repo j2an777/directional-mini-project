@@ -23,31 +23,31 @@ pnpm dev (로컬에서 실행해야합니다.)
 
 ## 🚀 기술 스택
 ```bash
-### 1. Next.js 15
+# 1. Next.js 15
 - SSR기반 서버리스 환경으로 빠른 렌더링을 위해 채택했습니다.
 
-### 2. Emotion
+# 2. Emotion
 - CSS in JS 기반으로 재사용성 강한 컴포넌트 기반으로 스타일링이 효율적 관리와 가독성면에서 우수하다고 판단했습니다.
 - styled components와 비교했을 때에는 현재 styled components는 업데이트가 느리다는 점(거의 없다고 생각)과 번들 사이즈가 훨씬 작은 것을 감안해서 Emotion을 채택했습니다.
 
-### 3. axios, tanstack query
+# 3. axios, tanstack query
 - api 통신 모듈화 및 인터셉터를 통한 request, response를 커스텀할 수 있다는 점과
 - 캐싱 데이터 전략을 통해 서버 비용 절감 및 서비스 UX와 개발에서의 DX를 보완해주는 라이브러리라고 생각하여 사용했습니다.
 
-### 4. Rechart
+# 4. Rechart
 - 차트 종류별로 서치한 결과 요구사항에 맞게 지원 가능한 기술이라는 점과
 - 사용 방법 또한 간단하다는 판단이 되어 채택했습니다.
 
-### 5. React-hook-form & Zod
+# 5. React-hook-form & Zod
 - Form 기능에서의 컴포넌트 event target 관리 및 유효성 검사에서의 보일러 플레이트 코드들을 간소화할 수 있다는 점으로 판단했습니다.
 - 각 유효성에 맞게 쉽고, 간편하게 커스터마이징 가능하다는 점을 생각하여 채택했습니다.
 - 특히, zod를 통한 스키마 형태로 간편하게 유효성 검사를 별도로 관리 및 적용할 수 있어 설계에 편했습니다.
 
-### 6. iron-session
+# 6. iron-session
 - 클라이언트 세션 관리하는 라이브러리로 next-auth와 비교했을 때 설정이 훨씬 쉽다는 장점과
 - 컴포넌트의 종류(서버 / 클라이언트)에 따라 기능 수행 판단해야 하는 단점을 놓고 판단한 결과 해당 프로젝트는 대규모가 아니기에 iron-session을 채택했습니다.
 
-### 7. husky & commitlint & prettier & lint-staged & 
+# 7. husky & commitlint & prettier & lint-staged & 
 - 프로젝트 커밋 히스토리 관리하기 위해 사용했습니다.
 - 히스토리 남기기 전에 통일된 양식으로 작성할 수 있다는 점과 staged files에 대해 자동 prettier 포맷팅하여 남길 수 있는 장점이 있다고 판단했습니다.
 
