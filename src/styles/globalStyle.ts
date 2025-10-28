@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { colorPalatte } from './colorPalatte';
+import { colorPalatte, colors } from './colorPalatte';
 import { fontFamily } from './fonts';
 
 export default css`
@@ -145,25 +145,25 @@ export default css`
   input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     box-shadow: 0 0 0px 1000px transparent inset;
-    -webkit-text-fill-color: white;
+    -webkit-text-fill-color: ${colors.black20};
     transition: background-color 5000s ease-in-out 0s;
   }
 
   input:-moz-autofill {
     box-shadow: 0 0 0px 1000px transparent inset;
-    -moz-text-fill-color: white;
+    -moz-text-fill-color: ${colors.black20};
     transition: background-color 5000s ease-in-out 0s;
   }
 
   input:-ms-autofill {
     box-shadow: 0 0 0px 1000px transparent inset;
-    -ms-text-fill-color: white;
+    -ms-text-fill-color: ${colors.black20};
     transition: background-color 5000s ease-in-out 0s;
   }
 
   input:autofill {
     box-shadow: 0 0 0px 1000px transparent inset;
-    text-fill-color: white;
+    text-fill-color: ${colors.black20};
     transition: background-color 5000s ease-in-out 0s;
   }
 `;
