@@ -4,6 +4,8 @@ Next.js 15 기반으로 구축된 디렉셔널 미니 프론트엔드 프로젝�
 완성된 기능으로는 **로그인**, **토큰 관리**, **차트 렌더링** 기능입니다.
 시간 관계상 게시글 CRUD는 제외하고, 제출하게된 점이 아쉬운 경험이였습니다.
 
+<img width="1882" height="932" alt="Image" src="https://github.com/user-attachments/assets/d14a4399-3255-4fb1-9082-d84e34073cbe" />
+
 ---
 
 ## 🚀 프로젝트 실행 방법
