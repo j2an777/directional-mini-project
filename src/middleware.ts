@@ -2,16 +2,22 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getIronSession } from 'iron-session';
 import { cookies } from 'next/headers';
 
-import { isValidSession } from '@/utils/isValidSession';
 import { sessionOptions } from '@/lib/session';
-import { SessionContent } from '@/types/user';
+import { UserContent } from '@/types/user';
+
+import { isValidSession } from './utils/session/isValidSession';
 
 export async function middleware(request: NextRequest) {
   const { nextUrl } = request;
   const { pathname } = nextUrl;
 
+  if (pathname === '/') {
+    const homeUrl = new URL('/home', request.url);
+    return NextResponse.redirect(homeUrl);
+  }
+
   const cookieData = await cookies();
-  const session = await getIronSession<SessionContent | any>(cookieData, sessionOptions);
+  const session = await getIronSession<UserContent>(cookieData, sessionOptions);
 
   const authMenuUrls = ['/login'];
   const isAuthPath = authMenuUrls.some((url) => pathname.startsWith(url));
@@ -23,5 +29,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|api|favicon.ico|images|static|fonts|\\(guest\\)).*)'],
+  matcher: ['/((?!_next|api|images|static|fonts|\\(guest\\)).*)'],
 };
