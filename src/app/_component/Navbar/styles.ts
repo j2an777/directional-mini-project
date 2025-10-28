@@ -1,8 +1,10 @@
 'use client';
 
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 import { colors } from '@/styles/colorPalatte';
+import { layoutMap } from '@/styles/layoutMap';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -11,17 +13,36 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 70px;
   padding: 0px 160px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${layoutMap.betweenRow};
   background-color: ${colors.white};
+  z-index: 999;
 `;
 
-const Block = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+const LeftBlock = styled.div`
+  ${layoutMap.flexStartRow};
+  gap: 36px;
+`;
+
+const RightBlock = styled.div`
+  ${layoutMap.flexEndRow};
   gap: 12px;
 `;
 
-export { Wrapper, Block };
+const MenuItem = styled.div`
+  ${layoutMap.flexStartRow};
+  gap: 16px;
+`;
+
+const LinkItem = styled(Link)`
+  ${layoutMap.flexStartRow};
+  gap: 4px;
+  text-decoration: none;
+
+  &:hover {
+    .linkText {
+      color: ${colors.pink};
+    }
+  }
+`;
+
+export { Wrapper, LeftBlock, RightBlock, MenuItem, LinkItem };

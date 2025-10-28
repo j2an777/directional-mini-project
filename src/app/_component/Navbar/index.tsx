@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 
 import { deleteSession } from '@/utils/session/manageSession';
 import Button from '@/components/Button';
+import menuItems from '@/constants/menu';
 import Text from '@/components/Text';
 import Icon from '@/components/Icon';
 
@@ -20,16 +21,27 @@ const Navbar = ({ email }: { email: string }) => {
 
   return (
     <S.Wrapper>
-      <S.Block>
-        <Icon value="logo" size={50} />
-        <Text textSize="p5" color="pink">
-          디렉셔널
-        </Text>
-      </S.Block>
-      <S.Block>
+      <S.LeftBlock>
+        <S.LinkItem href="/">
+          <Icon value="logo" size={50} />
+          <Text textSize="p5" color="pink">
+            디렉셔널
+          </Text>
+        </S.LinkItem>
+        <S.MenuItem>
+          {menuItems.map((menu) => (
+            <S.LinkItem href={menu.url} key={menu.id}>
+              <Text textSize="p7" className="linkText">
+                {menu.name}
+              </Text>
+            </S.LinkItem>
+          ))}
+        </S.MenuItem>
+      </S.LeftBlock>
+      <S.RightBlock>
         <Text textSize="p8">안녕하세요! {email}님</Text>
         <Button btnContent="로그아웃" onClick={handleLogout} defaultType="pinkWhite" btnSize="buttonM" />
-      </S.Block>
+      </S.RightBlock>
     </S.Wrapper>
   );
 };
